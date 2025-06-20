@@ -25,14 +25,14 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-50 glass-effect bg-gray-900/80 border-b border-gray-800/50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-primary-red rounded-lg flex items-center justify-center">
               <Video className="text-white text-xl" />
             </div>
             <span className="text-2xl font-display font-bold text-white">CineVision</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -53,7 +53,6 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              onTouchStart={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white text-2xl p-2 hover:bg-gray-700 rounded-lg transition-colors duration-200 z-50 relative"
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
@@ -75,7 +74,6 @@ export default function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  onTouchStart={() => scrollToSection(item.id)}
                   className="block w-full text-left text-gray-300 hover:text-primary-red transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-gray-800"
                 >
                   {item.label}
@@ -83,7 +81,6 @@ export default function Navigation() {
               ))}
               <button
                 onClick={() => scrollToSection("contact")}
-                onTouchStart={() => scrollToSection("contact")}
                 className="block w-full text-left bg-primary-red hover:bg-primary-dark px-4 py-3 rounded-lg transition-colors duration-300 mt-4"
               >
                 Contact
