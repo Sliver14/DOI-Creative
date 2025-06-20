@@ -14,27 +14,51 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Film Clapper Board */}
-      <div className="absolute top-32 right-16 opacity-15 animate-float">
-        <div className="relative">
-          <div className="w-16 h-12 bg-gray-800 rounded-t-lg"></div>
-          <div className="w-16 h-8 bg-white border-2 border-gray-800 rounded-b-lg relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-transparent opacity-20"></div>
-            <div className="h-1 bg-gray-800 w-full mt-1"></div>
-            <div className="h-1 bg-gray-800 w-full mt-1"></div>
+      {/* Animated Camera Elements */}
+      <div className="absolute top-20 left-10 opacity-10 animate-rotate-slow z-0">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-gray-400">
+          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+          <circle cx="12" cy="13" r="3"/>
+        </svg>
+      </div>
+      
+      {/* Film Strip Animation */}
+      <div className="absolute top-40 right-20 animate-slide-left z-0">
+        <div className="flex space-x-2 opacity-8">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="w-8 h-12 bg-gray-300 rounded border-2 border-gray-400"></div>
+          ))}
+        </div>
+      </div>
+
+      {/* Editing Dashboard Elements */}
+      <div className="absolute bottom-32 left-20 opacity-8 animate-pulse-glow z-0">
+        <div className="bg-gray-200 rounded-lg p-4 w-48">
+          <div className="space-y-2">
+            <div className="h-2 bg-red-300 rounded w-3/4"></div>
+            <div className="h-2 bg-gray-300 rounded w-1/2"></div>
+            <div className="h-2 bg-gray-300 rounded w-2/3"></div>
           </div>
         </div>
       </div>
 
-      {/* Spotlight */}
-      <div className="absolute top-20 left-16 opacity-10 animate-pulse-glow">
-        <div className="relative">
-          <div className="w-8 h-16 bg-gray-400 rounded-full"></div>
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-8 border-transparent border-t-yellow-300 opacity-60"></div>
+      {/* Floating Camera Lens */}
+      <div className="absolute top-60 right-40 animate-float opacity-10 z-0">
+        <div className="w-16 h-16 rounded-full border-4 border-gray-400 bg-gray-200 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full bg-gray-500"></div>
+        </div>
+      </div>
+
+      {/* Timeline Elements */}
+      <div className="absolute bottom-20 right-10 animate-slide-right opacity-8 z-0">
+        <div className="space-y-1">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="h-3 bg-red-200 rounded" style={{width: `${80 + i * 20}px`}}></div>
+          ))}
         </div>
       </div>
       
-      <div ref={ref} className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div ref={ref} className="relative z-20 text-center px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
