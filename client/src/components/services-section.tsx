@@ -33,7 +33,15 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Director's Megaphone */}
+      <div className="absolute top-20 left-12 opacity-12 animate-float">
+        <div className="relative">
+          <div className="w-4 h-8 bg-gray-500 rounded-full"></div>
+          <div className="w-8 h-6 bg-gray-400 rounded-r-full ml-4 -mt-7"></div>
+          <div className="w-12 h-8 bg-gray-300 rounded-r-full ml-8 -mt-6"></div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

@@ -6,7 +6,19 @@ export default function AboutMe() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Film Reel */}
+      <div className="absolute bottom-16 left-8 opacity-10 animate-rotate-slow">
+        <div className="relative">
+          <div className="w-12 h-12 border-4 border-gray-400 rounded-full"></div>
+          <div className="absolute inset-2 border-2 border-gray-500 rounded-full"></div>
+          <div className="absolute inset-4 w-4 h-4 bg-gray-600 rounded-full"></div>
+          <div className="absolute top-0 left-1/2 w-1 h-2 bg-gray-400 transform -translate-x-1/2 -translate-y-1"></div>
+          <div className="absolute bottom-0 left-1/2 w-1 h-2 bg-gray-400 transform -translate-x-1/2 translate-y-1"></div>
+          <div className="absolute left-0 top-1/2 w-2 h-1 bg-gray-400 transform -translate-x-1 -translate-y-1/2"></div>
+          <div className="absolute right-0 top-1/2 w-2 h-1 bg-gray-400 transform translate-x-1 -translate-y-1/2"></div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

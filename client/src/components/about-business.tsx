@@ -5,7 +5,19 @@ export default function AboutBusiness() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white relative overflow-hidden">
+      {/* Camera Tripod */}
+      <div className="absolute top-16 right-8 opacity-10 animate-slide-right">
+        <div className="relative">
+          <div className="w-3 h-20 bg-gray-400 mx-auto"></div>
+          <div className="w-8 h-8 bg-gray-600 rounded mx-auto -mt-2"></div>
+          <div className="flex justify-center -mt-1">
+            <div className="w-1 h-6 bg-gray-400 rotate-12 origin-bottom"></div>
+            <div className="w-1 h-6 bg-gray-400 -rotate-12 origin-bottom"></div>
+            <div className="w-1 h-6 bg-gray-400"></div>
+          </div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

@@ -24,7 +24,17 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Studio Light */}
+      <div className="absolute bottom-20 right-12 opacity-10 animate-slide-left">
+        <div className="relative">
+          <div className="w-6 h-16 bg-gray-500 rounded-t-full"></div>
+          <div className="w-12 h-8 bg-gray-400 rounded-full -mt-4 -ml-3"></div>
+          <div className="w-16 h-4 bg-gray-300 rounded-full -mt-2 -ml-5"></div>
+          <div className="w-1 h-8 bg-gray-600 mx-auto"></div>
+          <div className="w-8 h-2 bg-gray-700 rounded mx-auto"></div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

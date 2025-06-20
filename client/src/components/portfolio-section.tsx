@@ -39,7 +39,16 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white relative overflow-hidden">
+      {/* Vintage Camera */}
+      <div className="absolute top-24 right-16 opacity-12 animate-pulse-glow">
+        <div className="relative">
+          <div className="w-12 h-8 bg-gray-600 rounded"></div>
+          <div className="w-8 h-6 bg-gray-500 rounded-full mx-auto -mt-1"></div>
+          <div className="w-4 h-4 bg-gray-400 rounded-full mx-auto -mt-1"></div>
+          <div className="w-2 h-1 bg-red-400 mx-auto mt-1"></div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

@@ -67,7 +67,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Editing Timeline */}
+      <div className="absolute top-32 left-8 opacity-10 animate-pulse-glow">
+        <div className="relative">
+          <div className="w-20 h-3 bg-gray-400 rounded"></div>
+          <div className="w-16 h-2 bg-red-300 rounded mt-1"></div>
+          <div className="w-12 h-2 bg-gray-300 rounded mt-1"></div>
+          <div className="w-14 h-2 bg-blue-300 rounded mt-1"></div>
+          <div className="absolute -top-1 left-2 w-1 h-5 bg-gray-600"></div>
+          <div className="absolute -top-1 left-8 w-1 h-5 bg-gray-600"></div>
+        </div>
+      </div>
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
