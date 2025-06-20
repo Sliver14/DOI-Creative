@@ -22,14 +22,14 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-effect bg-gray-900/80 border-b border-gray-800/50">
+    <nav className="fixed top-0 w-full z-50 glass-effect bg-white/80 border-b border-gray-200/50 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-primary-red rounded-lg flex items-center justify-center">
               <Video className="text-white text-xl" />
             </div>
-            <span className="text-2xl font-display font-bold text-white">CineVision</span>
+            <span className="text-2xl font-display font-bold text-gray-900">CineVision</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -37,7 +37,7 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-primary-red transition-colors duration-300"
+                className="text-gray-700 hover:text-primary-red transition-colors duration-300"
               >
                 {item.label}
               </button>
@@ -53,7 +53,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white text-2xl p-2 hover:bg-gray-700 rounded-lg transition-colors duration-200 z-50 relative"
+              className="text-gray-700 text-2xl p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 z-50 relative"
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </button>
@@ -67,14 +67,14 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-effect bg-gray-900/95 border-t border-gray-800/50 z-40"
+            className="md:hidden glass-effect bg-white/95 border-t border-gray-200/50 z-40"
           >
             <div className="container mx-auto px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-300 hover:text-primary-red transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-gray-800"
+                  className="block w-full text-left text-gray-700 hover:text-primary-red transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-gray-100"
                 >
                   {item.label}
                 </button>

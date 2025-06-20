@@ -33,7 +33,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-800">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -42,10 +42,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-display font-bold mb-6 text-white">
+          <h2 className="text-5xl font-display font-bold mb-6 text-gray-900">
             Our <span className="primary-red">Services</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             From concept to completion, we offer comprehensive video production services that bring your vision to life with cinematic quality and creative excellence.
           </p>
         </motion.div>
@@ -57,16 +57,16 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
-              className="service-card bg-gray-900 rounded-2xl p-8 shadow-2xl transition-all duration-500 hover:shadow-red-500/20"
+              className="service-card bg-white rounded-2xl p-8 shadow-2xl transition-all duration-500 hover:shadow-red-500/20 border border-gray-200"
             >
               <div className="w-16 h-16 bg-primary-red rounded-2xl flex items-center justify-center mb-6 animate-float">
                 <service.icon className="text-white text-2xl" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 {service.description}
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-700">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center">
                     <Check className="text-red-500 mr-2 w-4 h-4" />
@@ -83,18 +83,18 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-          className="service-card bg-gray-900 rounded-2xl p-8 shadow-2xl transition-all duration-500 hover:shadow-red-500/20"
+          className="service-card bg-white rounded-2xl p-8 shadow-2xl transition-all duration-500 hover:shadow-red-500/20 border border-gray-200"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="w-16 h-16 bg-primary-red rounded-2xl flex items-center justify-center mb-6 animate-float">
                 <Smartphone className="text-white text-2xl" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Short-form Editing</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Short-form Editing</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 Dynamic short-form content optimized for social media platforms. We create engaging, shareable content that captures attention and drives engagement across all digital channels.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-700">
                 {["Social Media Videos", "Instagram Reels", "TikTok Content", "YouTube Shorts"].map((feature) => (
                   <li key={feature} className="flex items-center">
                     <Check className="text-red-500 mr-2 w-4 h-4" />

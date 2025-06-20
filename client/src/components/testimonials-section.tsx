@@ -13,10 +13,10 @@ export default function TestimonialsSection() {
 
   if (isLoading) {
     return (
-      <section id="testimonials" className="py-20 bg-gray-800">
+      <section id="testimonials" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <div className="text-white">Loading testimonials...</div>
+            <div className="text-gray-900">Loading testimonials...</div>
           </div>
         </div>
       </section>
@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-800">
+    <section id="testimonials" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -33,10 +33,10 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-display font-bold mb-6 text-white">
+          <h2 className="text-5xl font-display font-bold mb-6 text-gray-900">
             Client <span className="primary-red">Testimonials</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Hear what our clients have to say about working with CineVision Studios and the impact our work has made on their success.
           </p>
         </motion.div>
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
-                className="bg-gray-900 rounded-2xl p-8 shadow-2xl"
+                className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-200"
               >
                 <div className="flex items-center mb-6">
                   <div className="flex text-red-500">
@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed italic">
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
                   "{testimonial.content}"
                 </p>
                 <div className="flex items-center">
@@ -68,14 +68,14 @@ export default function TestimonialsSection() {
                     className="w-12 h-12 rounded-full mr-4 object-cover" 
                   />
                   <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-gray-400 text-sm">{testimonial.title}, {testimonial.company}</div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-gray-600 text-sm">{testimonial.title}, {testimonial.company}</div>
                   </div>
                 </div>
               </motion.div>
             ))
           ) : (
-            <div className="col-span-full text-center text-gray-400">
+            <div className="col-span-full text-center text-gray-600">
               No testimonials available
             </div>
           )}

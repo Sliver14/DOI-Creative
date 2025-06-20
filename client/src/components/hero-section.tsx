@@ -13,14 +13,49 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Cinematic film production setup with professional lighting and camera equipment" 
-          className="w-full h-full object-cover" 
-        />
-        <div className="absolute inset-0 video-overlay"></div>
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Animated Camera Elements */}
+      <div className="absolute top-20 left-10 opacity-20 animate-rotate-slow">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-gray-400">
+          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+          <circle cx="12" cy="13" r="3"/>
+        </svg>
+      </div>
+      
+      {/* Film Strip Animation */}
+      <div className="absolute top-40 right-20 animate-slide-left">
+        <div className="flex space-x-2 opacity-10">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="w-8 h-12 bg-gray-300 rounded border-2 border-gray-400"></div>
+          ))}
+        </div>
+      </div>
+
+      {/* Editing Dashboard Elements */}
+      <div className="absolute bottom-32 left-20 opacity-15 animate-pulse-glow">
+        <div className="bg-gray-200 rounded-lg p-4 w-48">
+          <div className="space-y-2">
+            <div className="h-2 bg-red-300 rounded w-3/4"></div>
+            <div className="h-2 bg-gray-300 rounded w-1/2"></div>
+            <div className="h-2 bg-gray-300 rounded w-2/3"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Camera Lens */}
+      <div className="absolute top-60 right-40 animate-float opacity-20">
+        <div className="w-16 h-16 rounded-full border-4 border-gray-400 bg-gray-200 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full bg-gray-500"></div>
+        </div>
+      </div>
+
+      {/* Timeline Elements */}
+      <div className="absolute bottom-20 right-10 animate-slide-right opacity-10">
+        <div className="space-y-1">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="h-3 bg-red-200 rounded" style={{width: `${80 + i * 20}px`}}></div>
+          ))}
+        </div>
       </div>
       
       <div ref={ref} className="relative z-10 text-center px-6 max-w-6xl mx-auto">
@@ -33,19 +68,19 @@ export default function HeroSection() {
             Cinematic
             <span className="block primary-red">Storytelling</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Award-winning film production and video editing services that bring your vision to life with cinematic excellence
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="bg-primary-red hover:bg-primary-dark px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              className="bg-primary-red hover:bg-primary-dark px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl text-white"
             >
               View Our Work
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
               Start Your Project
             </button>

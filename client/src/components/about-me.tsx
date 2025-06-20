@@ -6,7 +6,7 @@ export default function AboutMe() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -16,13 +16,13 @@ export default function AboutMe() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-5xl font-display font-bold mb-6 text-white">
+            <h2 className="text-5xl font-display font-bold mb-6 text-gray-900">
               Meet the <span className="primary-red">Director</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
               I'm Alex Martinez, a cinematographer and director with over a decade of experience crafting visual stories that move, inspire, and connect with audiences on an emotional level.
             </p>
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               My journey began with documentary filmmaking, where I learned the power of authentic storytelling. This foundation now influences every project, whether it's a high-end commercial or an intimate narrative film.
             </p>
             <div className="space-y-4">

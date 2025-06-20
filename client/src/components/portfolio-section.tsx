@@ -39,7 +39,7 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-900">
+    <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -48,10 +48,10 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-display font-bold mb-6 text-white">
+          <h2 className="text-5xl font-display font-bold mb-6 text-gray-900">
             Our <span className="primary-red">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Explore our award-winning work and see how we bring stories to life through cinematic excellence and creative innovation.
           </p>
         </motion.div>

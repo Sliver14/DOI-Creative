@@ -67,7 +67,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -76,10 +76,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-display font-bold mb-6 text-white">
+          <h2 className="text-5xl font-display font-bold mb-6 text-gray-900">
             Start Your <span className="primary-red">Project</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.
           </p>
         </motion.div>
@@ -96,8 +96,8 @@ export default function ContactSection() {
                   <MapPin className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Studio Location</h3>
-                  <p className="text-gray-300">1234 Creative Drive<br />Los Angeles, CA 90028</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Studio Location</h3>
+                  <p className="text-gray-700">1234 Creative Drive<br />Los Angeles, CA 90028</p>
                 </div>
               </div>
               
@@ -106,8 +106,8 @@ export default function ContactSection() {
                   <Phone className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-                  <p className="text-gray-300">(555) 123-4567</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
+                  <p className="text-gray-700">(555) 123-4567</p>
                 </div>
               </div>
               
@@ -116,8 +116,8 @@ export default function ContactSection() {
                   <Mail className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                  <p className="text-gray-300">hello@cinevisionstudios.com</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+                  <p className="text-gray-700">hello@cinevisionstudios.com</p>
                 </div>
               </div>
             </div>
@@ -137,18 +137,18 @@ export default function ContactSection() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="glass-effect bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-2xl space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="glass-effect bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl space-y-6 border border-gray-200">
                 <div className="grid md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300">First Name</FormLabel>
+                        <FormLabel className="text-gray-700">First Name</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="John" 
-                            className="bg-gray-700 border-gray-600 text-white focus:border-red-500" 
+                            className="bg-white border-gray-300 text-gray-900 focus:border-red-500" 
                             {...field} 
                           />
                         </FormControl>
@@ -162,11 +162,11 @@ export default function ContactSection() {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300">Last Name</FormLabel>
+                        <FormLabel className="text-gray-700">Last Name</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="Doe" 
-                            className="bg-gray-700 border-gray-600 text-white focus:border-red-500" 
+                            className="bg-white border-gray-300 text-gray-900 focus:border-red-500" 
                             {...field} 
                           />
                         </FormControl>
@@ -181,12 +181,12 @@ export default function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300">Email</FormLabel>
+                      <FormLabel className="text-gray-700">Email</FormLabel>
                       <FormControl>
                         <Input 
                           type="email" 
                           placeholder="john@example.com" 
-                          className="bg-gray-700 border-gray-600 text-white focus:border-red-500" 
+                          className="bg-white border-gray-300 text-gray-900 focus:border-red-500" 
                           {...field} 
                         />
                       </FormControl>
@@ -200,10 +200,10 @@ export default function ContactSection() {
                   name="projectType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300">Project Type</FormLabel>
+                      <FormLabel className="text-gray-700">Project Type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="bg-gray-700 border-gray-600 text-white focus:border-red-500">
+                          <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-red-500">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
                         </FormControl>
@@ -225,10 +225,10 @@ export default function ContactSection() {
                   name="budgetRange"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300">Budget Range</FormLabel>
+                      <FormLabel className="text-gray-700">Budget Range</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="bg-gray-700 border-gray-600 text-white focus:border-red-500">
+                          <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-red-500">
                             <SelectValue placeholder="Select budget range" />
                           </SelectTrigger>
                         </FormControl>
@@ -249,12 +249,12 @@ export default function ContactSection() {
                   name="projectDetails"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300">Project Details</FormLabel>
+                      <FormLabel className="text-gray-700">Project Details</FormLabel>
                       <FormControl>
                         <Textarea 
                           rows={4} 
                           placeholder="Tell us about your vision..." 
-                          className="bg-gray-700 border-gray-600 text-white focus:border-red-500" 
+                          className="bg-white border-gray-300 text-gray-900 focus:border-red-500" 
                           {...field} 
                         />
                       </FormControl>

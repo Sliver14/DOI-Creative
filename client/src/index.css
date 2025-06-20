@@ -60,7 +60,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-gray-900 text-white overflow-x-hidden;
+    @apply font-sans antialiased bg-white text-gray-900 overflow-x-hidden;
   }
 
   html {
@@ -87,7 +87,7 @@
   }
 
   .hero-text {
-    background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+    background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -175,6 +175,44 @@
   }
 }
 
+@keyframes rotate-slow {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes slide-left {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  50% { 
+    transform: translateX(-30px); 
+  }
+}
+
+@keyframes slide-right {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  50% { 
+    transform: translateX(30px); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -189,4 +227,20 @@
 
 .animate-scale-in {
   animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 8s ease-in-out infinite;
+}
+
+.animate-slide-right {
+  animation: slide-right 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
 }
