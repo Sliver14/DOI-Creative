@@ -32,7 +32,7 @@ export default function Navigation() {
             <span className="text-2xl font-display font-bold text-white">CineVision</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <button
                 key={item.id}

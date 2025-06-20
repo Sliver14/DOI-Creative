@@ -7,11 +7,9 @@ import type { Testimonial } from "@shared/schema";
 export default function TestimonialsSection() {
   const { ref, isVisible } = useIntersectionObserver();
   
-  const { data: testimonials, isLoading, error } = useQuery<Testimonial[]>({
+  const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
-
-
 
   if (isLoading) {
     return (
@@ -78,7 +76,7 @@ export default function TestimonialsSection() {
             ))
           ) : (
             <div className="col-span-full text-center text-gray-400">
-              {error ? "Failed to load testimonials" : "No testimonials available"}
+              No testimonials available
             </div>
           )}
         </div>
