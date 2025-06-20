@@ -11,6 +11,8 @@ export default function TestimonialsSection() {
     queryKey: ['/api/testimonials'],
   });
 
+
+
   if (isLoading) {
     return (
       <section id="testimonials" className="py-20 bg-gray-800">
@@ -47,7 +49,7 @@ export default function TestimonialsSection() {
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
                 className="bg-gray-900 rounded-2xl p-8 shadow-2xl"
               >

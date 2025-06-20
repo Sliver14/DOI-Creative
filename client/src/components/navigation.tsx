@@ -53,7 +53,8 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white text-2xl"
+              onTouchStart={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-white text-2xl p-2 hover:bg-gray-700 rounded-lg transition-colors duration-200 z-50 relative"
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </button>
@@ -67,21 +68,23 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-effect bg-gray-900/95 border-t border-gray-800/50"
+            className="md:hidden glass-effect bg-gray-900/95 border-t border-gray-800/50 z-40"
           >
             <div className="container mx-auto px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-300 hover:text-primary-red transition-colors duration-300 py-2"
+                  onTouchStart={() => scrollToSection(item.id)}
+                  className="block w-full text-left text-gray-300 hover:text-primary-red transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-gray-800"
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left bg-primary-red hover:bg-primary-dark px-4 py-2 rounded-lg transition-colors duration-300 mt-4"
+                onTouchStart={() => scrollToSection("contact")}
+                className="block w-full text-left bg-primary-red hover:bg-primary-dark px-4 py-3 rounded-lg transition-colors duration-300 mt-4"
               >
                 Contact
               </button>
