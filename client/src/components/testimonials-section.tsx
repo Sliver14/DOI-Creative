@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import type { Testimonial } from "@shared/schema";
 
 export default function TestimonialsSection() {
   const { ref, isVisible } = useIntersectionObserver();
   
-  const { data: testimonials, isLoading } = useQuery({
+  const { data: testimonials, isLoading, error } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
 
@@ -41,37 +42,43 @@ export default function TestimonialsSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials?.map((testimonial: any, index: number) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
-              className="bg-gray-900 rounded-2xl p-8 shadow-2xl"
-            >
-              <div className="flex items-center mb-6">
-                <div className="flex text-red-500">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
-                  ))}
+          {testimonials && testimonials.length > 0 ? (
+            testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+                className="bg-gray-900 rounded-2xl p-8 shadow-2xl"
+              >
+                <div className="flex items-center mb-6">
+                  <div className="flex text-red-500">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-current" />
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <p className="text-gray-300 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
-              <div className="flex items-center">
-                <img 
-                  src={testimonial.imageUrl} 
-                  alt={`${testimonial.name}, ${testimonial.title} at ${testimonial.company}`}
-                  className="w-12 h-12 rounded-full mr-4 object-cover" 
-                />
-                <div>
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.title}, {testimonial.company}</div>
+                <p className="text-gray-300 mb-6 leading-relaxed italic">
+                  "{testimonial.content}"
+                </p>
+                <div className="flex items-center">
+                  <img 
+                    src={testimonial.imageUrl || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100"} 
+                    alt={`${testimonial.name}, ${testimonial.title} at ${testimonial.company}`}
+                    className="w-12 h-12 rounded-full mr-4 object-cover" 
+                  />
+                  <div>
+                    <div className="font-semibold text-white">{testimonial.name}</div>
+                    <div className="text-gray-400 text-sm">{testimonial.title}, {testimonial.company}</div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full text-center text-gray-400">
+              {error ? "Failed to load testimonials" : "No testimonials available"}
+            </div>
+          )}
         </div>
       </div>
     </section>

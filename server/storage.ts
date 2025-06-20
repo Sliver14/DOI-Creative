@@ -51,7 +51,12 @@ export class MemStorage implements IStorage {
 
     sampleTestimonials.forEach(testimonial => {
       const id = this.currentTestimonialId++;
-      const fullTestimonial: Testimonial = { ...testimonial, id };
+      const fullTestimonial: Testimonial = { 
+        ...testimonial, 
+        id,
+        rating: testimonial.rating || 5,
+        imageUrl: testimonial.imageUrl || null
+      };
       this.testimonials.set(id, fullTestimonial);
     });
   }
