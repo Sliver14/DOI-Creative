@@ -104,55 +104,55 @@ export default function ContactSection() {
                 </div>
               </div> */}
               
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1">
+              <a 
+                href="tel:+2348110259082" 
+                className="flex items-start space-x-4 hover:bg-gray-50 p-2 rounded-lg transition-colors duration-300 cursor-pointer group"
+                title="Call (234) 811-0259-082"
+              >
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1 group-hover:bg-red-600 transition-colors duration-300">
                   <Phone className="text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
-                  <a 
-                    href="tel:+2348110259082" 
-                    className="text-gray-700 hover:text-red-500 transition-colors duration-300 cursor-pointer"
-                    title="Call (234) 811-0259-082"
-                  >
+                  <span className="text-gray-700 group-hover:text-red-500 transition-colors duration-300">
                     (234) 811-0259-082
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1">
+              <a 
+                href="mailto:DOI Creatives@gmail.com" 
+                className="flex items-start space-x-4 hover:bg-gray-50 p-2 rounded-lg transition-colors duration-300 cursor-pointer group"
+                title="Send email to DOI Creatives@gmail.com"
+              >
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1 group-hover:bg-red-600 transition-colors duration-300">
                   <Mail className="text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
-                  <a 
-                    href="mailto:DOI Creatives@gmail.com" 
-                    className="text-gray-700 hover:text-red-500 transition-colors duration-300 cursor-pointer"
-                    title="Send email to DOI Creatives@gmail.com"
-                  >
+                  <span className="text-gray-700 group-hover:text-red-500 transition-colors duration-300">
                     DOI Creatives@gmail.com
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1">
+              <a 
+                href="https://wa.link/fe02s8" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 hover:bg-gray-50 p-2 rounded-lg transition-colors duration-300 cursor-pointer group"
+                title="Chat on WhatsApp"
+              >
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center mt-1 group-hover:bg-red-600 transition-colors duration-300">
                   <SiWhatsapp className="text-white text-xl" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">WhatsApp</h3>
-                  <a 
-                    href="https://wa.link/fe02s8" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-red-500 transition-colors duration-300 cursor-pointer"
-                    title="Chat on WhatsApp"
-                  >
+                  <span className="text-gray-700 group-hover:text-red-500 transition-colors duration-300">
                     Chat with us on WhatsApp
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="mt-8">
