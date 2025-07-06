@@ -1,10 +1,6 @@
 import { NextResponse } from 'next/server'
-import { drizzle } from 'drizzle-orm/neon-http'
-import { neon } from '@neondatabase/serverless'
+import { db } from '../../../lib/db'
 import { testimonials } from '../../../shared/schema'
-
-const sql = neon(process.env.DATABASE_URL!)
-const db = drizzle(sql)
 
 export async function GET() {
   try {
