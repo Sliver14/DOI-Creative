@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { db } from '../../../lib/db'
-import { contacts, insertContactSchema } from '../../../shared/schema'
+import { supabase } from '@/lib/db'
+import { insertContactSchema } from '@/shared/schema'
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,12 +10,19 @@ export async function POST(request: NextRequest) {
     const validatedData = insertContactSchema.parse(body)
     
     // Insert into database
-    const result = await db.insert(contacts).values(validatedData).returning()
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert(validatedData)
+      .select()
+
+    if (error) {
+      throw error
+    }
     
     return NextResponse.json({ 
       success: true, 
       message: 'Contact form submitted successfully',
-      data: result[0]
+      data: data[0]
     })
   } catch (error) {
     console.error('Contact form error:', error)
@@ -32,4 +39,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
-} 
+}

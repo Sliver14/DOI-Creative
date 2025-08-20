@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
@@ -83,7 +84,7 @@ export default function ContactSection() {
             Start Your <span className="primary-red">Project</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.
+            Ready to bring your vision to life? Let&apos;s discuss your project and create something extraordinary together.
           </p>
         </motion.div>
 
@@ -156,9 +157,11 @@ export default function ContactSection() {
             </div>
 
             <div className="mt-8">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                 alt="DOI Creative Studios modern production facility exterior with creative signage" 
+                width={800} 
+                height={600} 
                 className="rounded-2xl shadow-2xl w-full h-auto" 
               />
             </div>

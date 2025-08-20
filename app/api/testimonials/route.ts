@@ -1,14 +1,20 @@
 import { NextResponse } from 'next/server'
-import { db } from '../../../lib/db'
-import { testimonials } from '../../../shared/schema'
+import { supabase } from '@/lib/db'
 
 export async function GET() {
   try {
-    const result = await db.select().from(testimonials).orderBy(testimonials.id)
+    const { data, error } = await supabase
+      .from('testimonials')
+      .select('*')
+      .order('id', { ascending: true })
+
+    if (error) {
+      throw error
+    }
     
     return NextResponse.json({ 
       success: true, 
-      data: result
+      data
     })
   } catch (error) {
     console.error('Testimonials fetch error:', error)
@@ -18,4 +24,4 @@ export async function GET() {
       { status: 500 }
     )
   }
-} 
+}

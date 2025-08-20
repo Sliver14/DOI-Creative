@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Megaphone, Film, Video, Scissors, Smartphone, Check } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
@@ -107,9 +108,11 @@ export default function ServicesSection() {
               </ul>
             </div>
             <div>
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
                 alt="Modern video editing setup with multiple monitors showing timeline and social media content" 
+                width={600} 
+                height={400} 
                 className="rounded-xl shadow-lg w-full h-auto transform hover:scale-105 transition-transform duration-300" 
               />
             </div>

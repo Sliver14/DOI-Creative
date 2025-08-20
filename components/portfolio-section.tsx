@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
@@ -67,9 +68,11 @@ export default function PortfolioSection() {
           className="mb-16"
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
               alt="Cinematic video production showcase featuring professional camera equipment and film set" 
+              width={1200} 
+              height={600} 
               className="w-full h-80 object-cover" 
             />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -94,9 +97,11 @@ export default function PortfolioSection() {
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
               className="portfolio-item relative rounded-xl overflow-hidden shadow-2xl transition-all duration-500 cursor-pointer"
             >
-              <img 
+              <Image 
                 src={item.image}
                 alt={item.title}
+                width={600}
+                height={400}
                 className="w-full h-64 object-cover" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">

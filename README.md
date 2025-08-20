@@ -36,7 +36,8 @@ npm install
 3. Set up environment variables:
 Create a `.env.local` file in the root directory:
 ```env
-DATABASE_URL="your-neon-database-url-here"
+NEXT_PUBLIC_SUPABASE_URL="your-supabase-url-here"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="your-supabase-anon-key-here"
 NEXTAUTH_SECRET="your-nextauth-secret-here"
 NEXTAUTH_URL="http://localhost:3000"
 ```
@@ -84,7 +85,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Utility-first CSS
 - **Framer Motion** - Animation library
-- **Drizzle ORM** - Type-safe database ORM
+- **Supabase** - Backend as a Service
 - **React Query** - Data fetching and caching
 - **Radix UI** - Accessible UI components
 - **Lucide React** - Icon library

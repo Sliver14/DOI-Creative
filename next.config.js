@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ['drizzle-orm'],
+    serverComponentsExternalPackages: [],
   },
   images: {
     domains: ['images.unsplash.com'],

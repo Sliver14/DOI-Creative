@@ -1,38 +1,24 @@
-import { pgTable, text, serial, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const contacts = pgTable("contacts", {
-  id: serial("id").primaryKey(),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
-  email: text("email").notNull(),
-  projectType: text("project_type").notNull(),
-  budgetRange: text("budget_range").notNull(),
-  projectDetails: text("project_details").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+export const insertContactSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+  email: z.string().email(),
+  projectType: z.string(),
+  budgetRange: z.string(),
+  projectDetails: z.string(),
 });
 
-export const testimonials = pgTable("testimonials", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  title: text("title").notNull(),
-  company: text("company").notNull(),
-  content: text("content").notNull(),
-  rating: serial("rating").notNull().default(5),
-  imageUrl: text("image_url"),
-});
-
-export const insertContactSchema = createInsertSchema(contacts).omit({
-  id: true,
-  createdAt: true,
-});
-
-export const insertTestimonialSchema = createInsertSchema(testimonials).omit({
-  id: true,
+export const insertTestimonialSchema = z.object({
+  name: z.string(),
+  title: z.string(),
+  company: z.string(),
+  content: z.string(),
+  rating: z.number().min(1).max(5).optional().default(5),
+  imageUrl: z.string().url().optional(),
 });
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
-export type Contact = typeof contacts.$inferSelect;
+export type Contact = InsertContact & { id: number; created_at: string };
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
-export type Testimonial = typeof testimonials.$inferSelect;
+export type Testimonial = InsertTestimonial & { id: number };

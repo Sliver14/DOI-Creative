@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
@@ -18,9 +19,11 @@ export default function AboutBusiness() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-shrink-0 w-full md:w-1/2 h-fit"
           >
-            <img 
+            <Image 
               src="/assets/btv.png" 
               alt="Professional film studio with cinema cameras and lighting equipment" 
+              width={800} 
+              height={600} 
               className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 w-auto h-auto object-cover max-h-[800px]" 
             />
           </motion.div>

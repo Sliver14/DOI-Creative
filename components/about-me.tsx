@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { GraduationCap, Trophy } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
@@ -70,9 +71,11 @@ export default function AboutMe() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="order-1 md:order-2"
           >
-            <img 
+            <Image 
               src="/assets/ceo.webp"
               alt="CEO" 
+              width={800} 
+              height={600} 
               className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
             />
           </motion.div>
