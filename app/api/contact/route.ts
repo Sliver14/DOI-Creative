@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/db'
 import { insertContactSchema } from '@/shared/schema'
+import nodemailer from 'nodemailer'
+
+// Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+})
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,6 +28,23 @@ export async function POST(request: NextRequest) {
     if (error) {
       throw error
     }
+
+    // Send email
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'doicreatives@gmail.com',
+      subject: 'New Contact Form Submission',
+      html: `
+        <h1>New Contact Form Submission</h1>
+        <p><strong>Name:</strong> ${validatedData.firstName} ${validatedData.lastName}</p>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+        <p><strong>Project Type:</strong> ${validatedData.projectType}</p>
+        <p><strong>Budget Range:</strong> ${validatedData.budgetRange}</p>
+        <p><strong>Project Details:</strong> ${validatedData.projectDetails}</p>
+      `,
+    }
+
+    await transporter.sendMail(mailOptions)
     
     return NextResponse.json({ 
       success: true, 

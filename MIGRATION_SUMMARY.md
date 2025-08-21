@@ -35,7 +35,7 @@ After (Next.js):
 - **Before**: Express.js routes in `server/routes.ts`
 - **After**: Next.js API routes in `app/api/`
 - **Routes Converted**:
-  - `POST /api/contact` - Contact form submission
+  - `POST /api/contact` - Contact form submission. Now sends an email notification to `doicreatives@gmail.com` upon successful submission.
   - `GET /api/testimonials` - Fetch testimonials
 
 ### 5. Components Updated
