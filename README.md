@@ -1,23 +1,45 @@
-# DOI Creative - Next.js Version
+# DOI Creative
 
-A professional film production and video editing services website built with Next.js, TypeScript, and Tailwind CSS.
+DOI Creative is a professional film production and video editing services website. Built with Next.js 14, TypeScript, and Tailwind CSS, it features a modern, responsive design and a robust backend powered by Supabase and PostgreSQL.
 
 ## Features
 
-- **Modern Next.js 14** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Framer Motion** for animations
-- **Drizzle ORM** with PostgreSQL
-- **React Query** for data fetching
-- **Radix UI** components
-- **Responsive Design**
+- Modern Next.js 14 App Router
+- TypeScript for type safety
+- Tailwind CSS for rapid UI development
+- Framer Motion for smooth animations
+- Supabase for backend and authentication
+- PostgreSQL database integration
+- React Query for efficient data fetching
+- Radix UI for accessible UI components
+- Lucide React for icons
+- Responsive and mobile-friendly design
+
+## Technologies Used
+
+- **Next.js 14**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Supabase**
+- **PostgreSQL**
+- **React Query (@tanstack/react-query)**
+- **Radix UI** (multiple @radix-ui/react-* packages)
+- **Lucide React**
+- **Zod** (validation)
+- **React Hook Form**
+- **Embla Carousel**
+- **Recharts**
+- **date-fns**
+- **cmdk**
+- **nodemailer**
+- **eslint, prettier, typescript** (dev tools)
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - PostgreSQL database (Neon recommended)
 
 ### Installation
